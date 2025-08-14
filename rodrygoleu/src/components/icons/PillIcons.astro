@@ -1,0 +1,11 @@
+---
+const {href, target} = Astro.props
+---
+
+<a 
+   href={href} 
+   target = {target}
+   class="rounded-full border border-gray-400 flex justify-center items-center p-1 px-2.5"
+>
+   <slot/>
+</a>
