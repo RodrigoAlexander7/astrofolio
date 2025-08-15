@@ -1,0 +1,20 @@
+---
+const {label, text, ghlink, image} = Astro.props
+import githublogo from '../../assets/github.svg'
+---
+
+<div class="flex flex-row items-center justify-center w-5/8 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+   <img src={image.src} alt="ProjectImg" class="w-md h-auto m-3.5 mr-7">
+   <div >
+      <a href="#">
+         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {label}
+         </h5>
+      </a>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{text}</p>
+      <a href={ghlink} target="_blank" class="group inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg hover:bg-white hover:border-1 hover:text-black transition focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+         <img src={githublogo.src} class="mr-1.5 size-3.5 invert-100 group-hover:invert-0"/>
+         GitHub
+      </a>
+   </div>
+</div>

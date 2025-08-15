@@ -7,8 +7,4 @@
 
 *{
    font-family: 'Onest Variable';
-   color: var(--color-gray-900); 
-}
-.tooltip {
-  color: white; /* sobrescribe para tooltips */
 }

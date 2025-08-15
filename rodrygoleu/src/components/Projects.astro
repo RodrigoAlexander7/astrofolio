@@ -1,0 +1,18 @@
+---
+import Card from "./ui/Card.astro";
+import Image from "astro/components/Image.astro";
+import projectImgWFM from '../assets/projectsImgs/projectFileManager.png'
+---
+
+<section class="mt-14 flex flex-col justify-center items-center">
+   <h1 class="text-3xl font-bold mb-7">Projects</h1>
+
+   <div class="flex items-center justify-center">
+      <Card
+         label = 'Automated File Manager (AI Powered)'
+         text = 'Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms.'
+         ghlink = 'https://github.com/RodrigoAlexander7/Automated_File_Manager'
+         image = {projectImgWFM}
+      />   
+   </div>
+</section>
