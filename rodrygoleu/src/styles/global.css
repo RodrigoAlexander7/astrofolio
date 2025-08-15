@@ -1,6 +1,14 @@
 @import '@fontsource-variable/onest';
 @import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+
 
 *{
    font-family: 'Onest Variable';
+   color: var(--color-gray-900); 
+}
+.tooltip {
+  color: white; /* sobrescribe para tooltips */
 }

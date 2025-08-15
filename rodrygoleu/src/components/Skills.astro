@@ -1,0 +1,90 @@
+---
+import TsIcon from '../assets/IconSvg/ts.svg';
+import PythonIcon from '../assets/IconSvg/python.svg';
+import CppIcon from '../assets/IconSvg/cpp.svg';
+import JavaIcon from '../assets/IconSvg/java.svg';
+
+import ReactIcon from '../assets/IconSvg/react.svg';
+import AngularIcon from '../assets/IconSvg/angular.svg';
+import AstroIcon from '../assets/IconSvg/astro.svg';
+import NextjsIcon from '../assets/IconSvg/nextjs.svg';
+import FlutterIcon from '../assets/IconSvg/flutter.svg';
+import ExpoIcon from '../assets/IconSvg/expo.svg';
+
+import NodejsIcon from '../assets/IconSvg/nodejs.svg';
+import ExpressIcon from '../assets/IconSvg/express.svg';
+import NestjsIcon from '../assets/IconSvg/nestjs.svg';
+import SpringIcon from '../assets/IconSvg/spring.svg';
+import FastapiIcon from '../assets/IconSvg/fastapi.svg';
+
+import MongoIcon from '../assets/IconSvg/mongo.svg';
+import PostgresIcon from '../assets/IconSvg/postgres.svg';
+import MysqlIcon from '../assets/IconSvg/mysql.svg';
+import DockerIcon from '../assets/IconSvg/docker.svg';
+import GitIcon from '../assets/IconSvg/git.svg';
+import LinuxIcon from '../assets/IconSvg/linux.svg';
+
+const categories = [
+  {
+    title: 'Languages',
+    items: [
+      { Icon: TsIcon, alt: 'TypeScript' },
+      { Icon: PythonIcon, alt: 'Python' },
+      { Icon: CppIcon, alt: 'C++' },
+      { Icon: JavaIcon, alt: 'Java' },
+    ],
+  },
+  {
+    title: 'Backend',
+    items: [
+      { Icon: NodejsIcon, alt: 'Node.js' },
+      { Icon: ExpressIcon, alt: 'Express' },
+      { Icon: NestjsIcon, alt: 'NestJS' },
+      { Icon: SpringIcon, alt: 'Spring' },
+      { Icon: FastapiIcon, alt: 'FastAPI' },
+    ],
+  },
+  {
+    title: 'Frontend & Mobile',
+    items: [
+      { Icon: ReactIcon, alt: 'React' },
+      { Icon: AngularIcon, alt: 'Angular' },
+      { Icon: AstroIcon, alt: 'Astro' },
+      { Icon: NextjsIcon, alt: 'Next.js' },
+      { Icon: FlutterIcon, alt: 'Flutter' },
+      { Icon: ExpoIcon, alt: 'Expo' },
+    ],
+  },
+  {
+    title: 'Dev Tools',
+    items: [
+      { Icon: MongoIcon, alt: 'MongoDB' },
+      { Icon: PostgresIcon, alt: 'PostgreSQL' },
+      { Icon: MysqlIcon, alt: 'MySQL' },
+      { Icon: DockerIcon, alt: 'Docker' },
+      { Icon: GitIcon, alt: 'Git' },
+      { Icon: LinuxIcon, alt: 'Linux' },
+    ],
+  },
+];
+---
+
+<div class="flex flex-col justify-center items-center ">
+   <h1 class="text-3xl font-bold">Stack & Skills</h1>
+   {categories.map(({title, items})=>(
+      <h2 class="text-2xl font-semibold m-3">{title}</h2>
+      <div class="flex flex-row gap-4 justify-center">
+         {items.map(({Icon, alt}, idx)=>{
+            const idIcon = `${idx}-${alt}`
+            return(
+               <Icon class="size-14" data-tooltip-target={idIcon} data-tooltip-style="light" type="svg"/>
+               <div id={idIcon} role="tooltip" class="text-sm font-medium text-white absolute z-10 invisible inline-block px-3 py-2 transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
+                  {alt}
+                  <div class="tooltip-arrow" data-popper-arrow></div>
+               </div>
+            )
+         })}
+      </div>     
+      ))
+   } 
+</div>
