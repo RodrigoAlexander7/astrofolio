@@ -1,7 +1,10 @@
 ---
 import Card from "./ui/Card.astro";
-import Image from "astro/components/Image.astro";
 import projectImgWFM from '../assets/projectsImgs/projectFileManager.png'
+import anaconda from '../assets/IconBadges/anaconda.svg'
+import python from '../assets/IconBadges/python.svg'
+import qt from '../assets/IconBadges/qt.svg'
+import scikitLearn from '../assets/IconBadges/scikitLearn.svg'
 ---
 
 <section class="mt-14 flex flex-col justify-center items-center">
@@ -13,6 +16,7 @@ import projectImgWFM from '../assets/projectsImgs/projectFileManager.png'
          text = 'Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms.'
          ghlink = 'https://github.com/RodrigoAlexander7/Automated_File_Manager'
          image = {projectImgWFM}
+         badges = {[python , qt, scikitLearn]}
       />   
    </div>
 </section>
