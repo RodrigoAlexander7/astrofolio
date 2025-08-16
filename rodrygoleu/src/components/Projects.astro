@@ -1,16 +1,35 @@
 ---
 import Card from "./ui/Card.astro";
+
 import projectImgWFM from '../assets/projectsImgs/projectFileManager.png'
-import anaconda from '../assets/IconBadges/anaconda.svg'
+import projectImgDF from '../assets/projectsImgs/projectDosisFe.png'
+
+import ts from '../assets/IconSvg/ts.svg'
 import python from '../assets/IconBadges/python.svg'
+import react from '../assets/IconBadges/react.svg'
+import expo from '../assets/IconBadges/expo.svg'
 import qt from '../assets/IconBadges/qt.svg'
 import scikitLearn from '../assets/IconBadges/scikitLearn.svg'
 ---
 
 <section class="mt-14 flex flex-col justify-center items-center">
-   <h1 class="text-3xl font-bold mb-7">Projects</h1>
+   <h1 class="text-3xl font-bold mb-1">Projects</h1>
 
-   <div class="flex items-center justify-center">
+   <div class="flex flex-col items-center justify-center">
+      <Card 
+         label = 'Automated File Manager (AI Powered)'
+         text = 'Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms.'
+         ghlink = 'https://github.com/RodrigoAlexander7/Automated_File_Manager'
+         image = {projectImgWFM}
+         badges = {[python , qt, scikitLearn]}
+      />   
+      <Card
+         label = 'Una Dosis de Fe'
+         text = 'DosisFe is a mobile application developed with React Native and Expo (EAS) that seeks to improve the diagnosis and monitoring of anemia by adjusting hemoglobin for height.'
+         ghlink = 'https://github.com/RodrigoAlexander7/H-Calculator'
+         image = {projectImgDF}
+         badges = {[ts, react, expo, python]}
+      />   
       <Card
          label = 'Automated File Manager (AI Powered)'
          text = 'Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms.'
