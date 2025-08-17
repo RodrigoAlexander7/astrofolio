@@ -70,14 +70,14 @@ const categories = [
 ---
 
 <div id="skills" class="flex flex-col justify-center items-center ">
-   <h1 class="text-3xl font-bold">Stack & Skills</h1>
+   <h1 class="text-2xl md:text-3xl font-bold">Stack & Skills</h1>
    {categories.map(({title, items})=>(
-      <h2 class="text-2xl font-semibold m-3">{title}</h2>
-      <div class="flex flex-row gap-4 justify-center">
+      <h2 class="text-xl md:text-2xl font-semibold m-3">{title}</h2>
+      <div class="flex flex-row flex-wrap mx-5 gap-4 justify-center">
          {items.map(({Icon, alt}, idx)=>{
             const idIcon = `${idx}-${alt}`
             return(
-               <Icon class="size-12 hover:scale-115 transition" data-tooltip-target={idIcon} data-tooltip-style="light" type="svg"/>
+               <Icon class="size-10 md:size-12 hover:scale-115 transition" data-tooltip-target={idIcon} data-tooltip-style="light" type="svg"/>
                <div id={idIcon} role="tooltip" class="text-sm font-medium text-white absolute z-10 invisible inline-block px-3 py-2 transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
                   {alt}
                   <div class="tooltip-arrow" data-popper-arrow></div>
