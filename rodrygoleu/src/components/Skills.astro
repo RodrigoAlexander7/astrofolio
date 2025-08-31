@@ -77,7 +77,7 @@ const categories = [
          {items.map(({Icon, alt}, idx)=>{
             const idIcon = `${idx}-${alt}`
             return(
-               <Icon class="size-10 md:size-12 hover:scale-115 transition" data-tooltip-target={idIcon} data-tooltip-style="light" type="svg"/>
+               <Icon class="size-10 md:size-12 hover:scale-115 transition duration-300 " data-tooltip-target={idIcon} data-tooltip-style="light" type="svg"/>
                <div id={idIcon} role="tooltip" class="text-sm font-medium text-white absolute z-10 invisible inline-block px-3 py-2 transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
                   {alt}
                   <div class="tooltip-arrow" data-popper-arrow></div>
