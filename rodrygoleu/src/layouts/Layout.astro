@@ -2,12 +2,10 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import About from "../components/About.astro";
-import Stats from "../components/Stats.astro";
 import Skills from "../components/Skills.astro";
 import Projects from "../components/Projects.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
-import BackToTop from "../components/BackToTop.astro";
 ---
 
 <!doctype html>
@@ -18,35 +16,24 @@ import BackToTop from "../components/BackToTop.astro";
 		<link rel="icon" type="image/svg+xml" href="/logo.png" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
-		<meta
-			name="description"
-			content="Rodrigo Alexander Fernandez - Full-Stack Developer Portfolio. Specialized in web and mobile development with expertise in React, Node.js, and modern technologies."
-		/>
-		<title>Rodrigo Alexander - Full-Stack Developer Portfolio</title>
+		<title>@RodrygoLeu - Portfolio</title>
 	</head>
 
 	<body
-		class="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300 antialiased"
+		class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300"
 	>
-		<!-- Fondo decorativo con gradiente -->
 		<div
-			class="fixed top-0 z-[-2] h-screen w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-gray-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.2),rgba(0,0,0,0))]"
+			class="absolute top-0 z-[-2] h-screen w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-gray-900 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))]"
 		>
 		</div>
-
 		<Header />
-
-		<main class="relative">
+		<main class="px-4">
 			<About />
-			<Stats />
 			<Skills />
 			<Projects />
 			<Contact />
 		</main>
-
 		<Footer />
-		
-		<BackToTop />
 
 		<slot />
 		<script
