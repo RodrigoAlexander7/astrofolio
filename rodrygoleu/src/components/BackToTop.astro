@@ -1,0 +1,42 @@
+<button
+   id="back-to-top"
+   aria-label="Go to top of page"
+   class="hidden fixed bottom-8 right-8 z-50 p-3 rounded-full bg-gray-800/80 dark:bg-indigo-500/80 text-white shadow-lg backdrop-blur-sm transition-opacity duration-300 hover:bg-gray-700 dark:hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 dark:focus:ring-indigo-500"
+>
+   <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-5 w-5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+   >
+      <path
+         fill-rule="evenodd"
+         d="M10 18a.75.75 0 01-.75-.75V4.56l-3.22 3.22a.75.75 0 11-1.06-1.06l4.5-4.5a.75.75 0 011.06 0l4.5 4.5a.75.75 0 11-1.06 1.06L10.75 4.56v12.69a.75.75 0 01-.75.75z"
+         clip-rule="evenodd"></path>
+   </svg>
+</button>
+
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+      const backToTopButton = document.getElementById("back-to-top");
+
+      if (backToTopButton) {
+         window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+               backToTopButton.classList.remove("hidden");
+               backToTopButton.classList.add("opacity-100");
+            } else {
+               backToTopButton.classList.add("hidden");
+               backToTopButton.classList.remove("opacity-100");
+            }
+         });
+
+         backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+               top: 0,
+               behavior: "smooth",
+            });
+         });
+      }
+   });
+</script>
