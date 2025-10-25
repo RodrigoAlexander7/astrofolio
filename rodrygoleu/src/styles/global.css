@@ -4,6 +4,9 @@
 @plugin "flowbite/plugin";
 @source "../../node_modules/flowbite";
 
+/* Make Tailwind's `dark:` variant respond to a `.dark` class on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
 * {
    font-family: 'Onest Variable';
 }
@@ -86,7 +89,11 @@ section {
 
 /* Mejoras de accesibilidad */
 :focus-visible {
-   @apply outline-2 outline-offset-2 outline-indigo-500;
+   outline-width: 2px;
+   outline-style: solid;
+   outline-color: rgb(99 102 241);
+   /* indigo-500 */
+   outline-offset: 2px;
 }
 
 /* Animación de gradiente de texto */
