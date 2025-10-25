@@ -1,48 +1,57 @@
 ---
 import Card from "./ui/Card.astro";
 
-import projectImgWFM from '../assets/projectsImgs/projectFileManager.png'
-import projectImgDF from '../assets/projectsImgs/projectDosisFe.png'
-import projectImgMed from '../assets/projectsImgs/projectMedico.png'
+import projectImgWFM from "../assets/projectsImgs/projectFileManager.png";
+import projectImgDF from "../assets/projectsImgs/projectDosisFe.png";
+import projectImgMed from "../assets/projectsImgs/projectMedico.png";
 
-import ts from '../assets/IconSvg/ts.svg'
-import python from '../assets/IconBadges/python.svg'
-import postgres from '../assets/IconBadges/postgres.svg'
-import node from '../assets/IconBadges/node.svg'
-import prisma from '../assets/IconBadges/prisma.svg'
-import shadcn from '../assets/IconBadges/shadcn.svg'
-import react from '../assets/IconBadges/react.svg'
-import expo from '../assets/IconBadges/expo.svg'
-import qt from '../assets/IconBadges/qt.svg'
-import scikitLearn from '../assets/IconBadges/scikitLearn.svg'
+import ts from "../assets/IconSvg/ts.svg";
+import python from "../assets/IconBadges/python.svg";
+import postgres from "../assets/IconBadges/postgres.svg";
+import node from "../assets/IconBadges/node.svg";
+import prisma from "../assets/IconBadges/prisma.svg";
+import shadcn from "../assets/IconBadges/shadcn.svg";
+import react from "../assets/IconBadges/react.svg";
+import expo from "../assets/IconBadges/expo.svg";
+import qt from "../assets/IconBadges/qt.svg";
+import scikitLearn from "../assets/IconBadges/scikitLearn.svg";
 ---
 
-<section id="projects" class="mt-14 flex flex-col justify-center items-center">
-   <h1 class="text-3xl font-bold mb-1">Projects</h1>
+<section id="projects" class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+   <div class="max-w-7xl mx-auto">
+      <h2
+         class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 text-gray-900 dark:text-white"
+      >
+         Projects
+      </h2>
 
-   <div class="flex flex-col items-center justify-center">
-      <Card 
-         label = 'Automated File Manager (AI Powered)'
-         text = 'Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms.'
-         ghlink = 'https://github.com/RodrigoAlexander7/Automated_File_Manager'
-         image = {projectImgWFM}
-         badges = {[python , qt, scikitLearn]}
-      />   
+      <div class="space-y-8 sm:space-y-12 lg:space-y-16">
+         <Card
+            label="Automated File Manager (AI Powered)"
+            text="Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms."
+            ghlink="https://github.com/RodrigoAlexander7/Automated_File_Manager"
+            image={projectImgWFM}
+            badges={[python, qt, scikitLearn]}
+            status="completed"
+         />
 
-      <Card
-         label = 'Medical Records Management System'
-         text = 'A full-stack web application designed to manage clinical records for a university healthcare system. This project streamlines the administration of patient data, vital signs, and medical histories, offering a modern and responsive interface for healthcare professionals.'
-         ghlink = 'https://github.com/RodrigoAlexander7/Sistema_Integrado_de_Salud_UNSA'
-         image = {projectImgMed}
-         badges = {[ts,postgres, prisma, shadcn,node, react]}
-      />   
+         <Card
+            label="Medical Records Management System"
+            text="A full-stack web application designed to manage clinical records for a university healthcare system. This project streamlines the administration of patient data, vital signs, and medical histories, offering a modern and responsive interface for healthcare professionals."
+            ghlink="https://github.com/RodrigoAlexander7/Sistema_Integrado_de_Salud_UNSA"
+            image={projectImgMed}
+            badges={[ts, postgres, prisma, shadcn, node, react]}
+            status="completed"
+         />
 
-      <Card
-         label = 'Mobile App for Anemia Monitoring (WIP)'
-         text = 'DosisFe is a mobile application developed with React Native and Expo (EAS) that seeks to improve the diagnosis and monitoring of anemia by adjusting hemoglobin for height.'
-         ghlink = 'https://github.com/RodrigoAlexander7/H-Calculator'
-         image = {projectImgDF}
-         badges = {[ts, react, expo]}
-      />   
+         <Card
+            label="Mobile App for Anemia Monitoring (WIP)"
+            text="DosisFe is a mobile application developed with React Native and Expo (EAS) that seeks to improve the diagnosis and monitoring of anemia by adjusting hemoglobin for height."
+            ghlink="https://github.com/RodrigoAlexander7/H-Calculator"
+            image={projectImgDF}
+            badges={[ts, react, expo]}
+            status="in-progress"
+         />
+      </div>
    </div>
 </section>

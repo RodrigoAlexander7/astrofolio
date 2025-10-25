@@ -1,16 +1,56 @@
 ---
-import gmailBadge from '../assets/IconBadges/gmail-badge.svg'
-import linkedinBadge from '../assets/IconBadges/linkedin-badge.svg'
-import githubBadge from '../assets/IconBadges/github-badge.svg'
-
+import gmailBadge from "../assets/IconBadges/gmail-badge.svg";
+import linkedinBadge from "../assets/IconBadges/linkedin-badge.svg";
+import githubBadge from "../assets/IconBadges/github-badge.svg";
 ---
 
-<section id="contact" class="m-7 flex flex-col align-middle justify-center items-center">
-   <h1 class="text-2xl sm:text-3xl font-semibold">Contact Me!</h1>
-   <p class="text-lg sm:text-xl my-4 text-center">Have an idea or want to work together? I’d love to hear from you!</p>
-   <div class="flex gap-2 justify-center ">
-      <a href="mailto:rodrygoleu7@gmail.com" target="_blank"><img class="sm:size-[115%]" src={gmailBadge.src} alt="gmail badge"></a>      
-      <a href="https://www.linkedin.com/in/rodrigo-fernandez-h/" target="_blank"><img class="sm:size-[115%]" src={linkedinBadge.src} alt="linkedin badge"></a>
-      <a href="https://github.com/RodrigoAlexander7" target="_blank"><img class="sm:size-[115%]" src={githubBadge.src} alt="github badge"></a>           
+<section id="contact" class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+   <div class="max-w-4xl mx-auto text-center">
+      <h2
+         class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6"
+      >
+         Let's Connect!
+      </h2>
+      <p
+         class="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-10 sm:mb-12 max-w-2xl mx-auto leading-relaxed"
+      >
+         Have an exciting project in mind or want to collaborate? I'd love to
+         hear from you and discuss how we can work together!
+      </p>
+      <div class="flex flex-wrap gap-4 sm:gap-6 justify-center items-center">
+         <a
+            href="mailto:rodrygoleu7@gmail.com"
+            target="_blank"
+            class="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+         >
+            <img
+               class="h-12 sm:h-14 lg:h-16 w-auto"
+               src={gmailBadge.src}
+               alt="Email me"
+            />
+         </a>
+         <a
+            href="https://www.linkedin.com/in/rodrigo-fernandez-h/"
+            target="_blank"
+            class="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+         >
+            <img
+               class="h-12 sm:h-14 lg:h-16 w-auto"
+               src={linkedinBadge.src}
+               alt="Connect on LinkedIn"
+            />
+         </a>
+         <a
+            href="https://github.com/RodrigoAlexander7"
+            target="_blank"
+            class="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+         >
+            <img
+               class="h-12 sm:h-14 lg:h-16 w-auto"
+               src={githubBadge.src}
+               alt="Follow on GitHub"
+            />
+         </a>
+      </div>
    </div>
 </section>

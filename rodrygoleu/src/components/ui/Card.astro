@@ -1,27 +1,83 @@
 ---
-const {label, text, ghlink, image, badges} = Astro.props
-import githublogo from '../../assets/github.svg'
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
+const { label, text, ghlink, image, badges, status = "completed" } = Astro.props;
+import githublogo from "../../assets/github.svg";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+const statusConfig = {
+   "completed": {
+      label: "Completed",
+      color: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+   },
+   "in-progress": {
+      label: "In Progress",
+      color: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+   },
+   "archived": {
+      label: "Archived",
+      color: "bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400"
+   }
+};
+
+const currentStatus = statusConfig[status] || statusConfig["completed"];
 ---
 
-<div class="flex flex-col lg:flex-row items-center justify-center w-3/4 lg:w-5/8 sm:p-6 my-7 bg-white  sm:border-gray-200 rounded-lg sm:shadow-sm lg:gap-2.5">
-   <Image src={image} alt="ProjectImg" class="rounded-xl w-full lg:w-1/2 h-auto md:m-3.5" />
-   <div>
-      <a href={ghlink} target="_blank">
-         <h5 class="my-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {label}
-         </h5>
-      </a>
-      <div class="flex flex-wrap gap-x-3 mb-2.5">
-         {badges.map((badge:ImageMetadata)=>(
-            <img src={badge.src} class="mb-3 flex size-9 hover:scale-120 transition">
-         ))}
+<a
+   href={ghlink}
+   target="_blank"
+   rel="noopener noreferrer"
+   class="block w-full group"
+>
+   <div
+      class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden flex flex-col lg:flex-row transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:-translate-y-1 border border-gray-100 dark:border-gray-700"
+   >
+      <div class="w-full lg:w-1/2 h-56 sm:h-64 lg:h-80 relative">
+         <Image src={image} alt={label} class="object-cover w-full h-full" />
+         <!-- Status Badge -->
+         <div class="absolute top-4 right-4">
+            <span class={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${currentStatus.color}`}>
+               {currentStatus.label}
+            </span>
+         </div>
       </div>
-      <p class="mb-7 font-normal text-gray-700 dark:text-gray-400">{text}</p>
-      <a href={ghlink} target="_blank" class="group inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg hover:bg-white hover:border-1 hover:text-black transition focus:ring-4 focus:outline-none">
-         <img src={githublogo.src} class="mr-1.5 size-3.5 invert-100 group-hover:invert-0"/>
-         GitHub
-      </a>
+      <div
+         class="p-5 sm:p-6 lg:p-8 w-full lg:w-1/2 flex flex-col justify-between"
+      >
+         <div>
+            <h3
+               class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 leading-tight"
+            >
+               {label}
+            </h3>
+            <p
+               class="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed"
+            >
+               {text}
+            </p>
+         </div>
+         <div class="space-y-4">
+            <div class="flex flex-wrap gap-2 sm:gap-3">
+               {
+                  badges.map((badge: ImageMetadata) => (
+                     <img
+                        src={badge.src}
+                        alt="Tech badge"
+                        class="h-7 sm:h-8 lg:h-9 w-auto transition-transform duration-300 group-hover:scale-110"
+                     />
+                  ))
+               }
+            </div>
+            <div
+               class="flex items-center gap-2 text-xs sm:text-sm lg:text-base font-medium text-gray-700 dark:text-gray-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300"
+            >
+               <img
+                  src={githublogo.src}
+                  alt="GitHub"
+                  class="size-4 sm:size-5 dark:invert"
+               />
+               <span class="font-semibold">View on GitHub →</span>
+            </div>
+         </div>
+      </div>
    </div>
-</div>
+</a>

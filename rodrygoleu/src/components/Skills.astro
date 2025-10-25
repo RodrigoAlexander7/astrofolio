@@ -1,90 +1,104 @@
 ---
-import TsIcon from '../assets/IconSvg/ts.svg';
-import PythonIcon from '../assets/IconSvg/python.svg';
-import CppIcon from '../assets/IconSvg/cpp.svg';
-import JavaIcon from '../assets/IconSvg/java.svg';
+import TsIcon from "../assets/IconSvg/ts.svg";
+import PythonIcon from "../assets/IconSvg/python.svg";
+import CppIcon from "../assets/IconSvg/cpp.svg";
+import JavaIcon from "../assets/IconSvg/java.svg";
 
-import ReactIcon from '../assets/IconSvg/react.svg';
-import AngularIcon from '../assets/IconSvg/angular.svg';
-import AstroIcon from '../assets/IconSvg/astro.svg';
-import NextjsIcon from '../assets/IconSvg/nextjs.svg';
-import FlutterIcon from '../assets/IconSvg/flutter.svg';
-import ExpoIcon from '../assets/IconSvg/expo.svg';
+import ReactIcon from "../assets/IconSvg/react.svg";
+import AngularIcon from "../assets/IconSvg/angular.svg";
+import AstroIcon from "../assets/IconSvg/astro.svg";
+import NextjsIcon from "../assets/IconSvg/nextjs.svg";
+import FlutterIcon from "../assets/IconSvg/flutter.svg";
+import ExpoIcon from "../assets/IconSvg/expo.svg";
 
-import NodejsIcon from '../assets/IconSvg/nodejs.svg';
-import ExpressIcon from '../assets/IconSvg/express.svg';
-import NestjsIcon from '../assets/IconSvg/nestjs.svg';
-import SpringIcon from '../assets/IconSvg/spring.svg';
-import FastapiIcon from '../assets/IconSvg/fastapi.svg';
+import NodejsIcon from "../assets/IconSvg/nodejs.svg";
+import ExpressIcon from "../assets/IconSvg/express.svg";
+import NestjsIcon from "../assets/IconSvg/nestjs.svg";
+import SpringIcon from "../assets/IconSvg/spring.svg";
+import FastapiIcon from "../assets/IconSvg/fastapi.svg";
 
-import MongoIcon from '../assets/IconSvg/mongo.svg';
-import PostgresIcon from '../assets/IconSvg/postgres.svg';
-import MysqlIcon from '../assets/IconSvg/mysql.svg';
-import DockerIcon from '../assets/IconSvg/docker.svg';
-import GitIcon from '../assets/IconSvg/git.svg';
-import LinuxIcon from '../assets/IconSvg/linux.svg';
+import MongoIcon from "../assets/IconSvg/mongo.svg";
+import PostgresIcon from "../assets/IconSvg/postgres.svg";
+import MysqlIcon from "../assets/IconSvg/mysql.svg";
+import DockerIcon from "../assets/IconSvg/docker.svg";
+import GitIcon from "../assets/IconSvg/git.svg";
+import LinuxIcon from "../assets/IconSvg/linux.svg";
 
 const categories = [
   {
-    title: 'Languages',
+    title: "Languages",
     items: [
-      { Icon: TsIcon, alt: 'TypeScript' },
-      { Icon: PythonIcon, alt: 'Python' },
-      { Icon: CppIcon, alt: 'C++' },
-      { Icon: JavaIcon, alt: 'Java' },
+      { Icon: TsIcon, alt: "TypeScript" },
+      { Icon: PythonIcon, alt: "Python" },
+      { Icon: CppIcon, alt: "C++" },
+      { Icon: JavaIcon, alt: "Java" },
     ],
   },
   {
-    title: 'Backend',
+    title: "Backend",
     items: [
-      { Icon: NodejsIcon, alt: 'Node.js' },
-      { Icon: ExpressIcon, alt: 'Express' },
-      { Icon: NestjsIcon, alt: 'NestJS' },
-      { Icon: SpringIcon, alt: 'Spring' },
-      { Icon: FastapiIcon, alt: 'FastAPI' },
+      { Icon: NodejsIcon, alt: "Node.js" },
+      { Icon: ExpressIcon, alt: "Express" },
+      { Icon: NestjsIcon, alt: "NestJS" },
+      { Icon: SpringIcon, alt: "Spring" },
+      { Icon: FastapiIcon, alt: "FastAPI" },
     ],
   },
   {
-    title: 'Frontend & Mobile',
+    title: "Frontend & Mobile",
     items: [
-      { Icon: ReactIcon, alt: 'React' },
-      { Icon: AngularIcon, alt: 'Angular' },
-      { Icon: AstroIcon, alt: 'Astro' },
-      { Icon: NextjsIcon, alt: 'Next.js' },
-      { Icon: FlutterIcon, alt: 'Flutter' },
-      { Icon: ExpoIcon, alt: 'Expo' },
+      { Icon: ReactIcon, alt: "React" },
+      { Icon: AngularIcon, alt: "Angular" },
+      { Icon: AstroIcon, alt: "Astro" },
+      { Icon: NextjsIcon, alt: "Next.js" },
+      { Icon: FlutterIcon, alt: "Flutter" },
+      { Icon: ExpoIcon, alt: "Expo" },
     ],
   },
   {
-    title: 'Dev Tools',
+    title: "Dev Tools",
     items: [
-      { Icon: MongoIcon, alt: 'MongoDB' },
-      { Icon: PostgresIcon, alt: 'PostgreSQL' },
-      { Icon: MysqlIcon, alt: 'MySQL' },
-      { Icon: DockerIcon, alt: 'Docker' },
-      { Icon: GitIcon, alt: 'Git' },
-      { Icon: LinuxIcon, alt: 'Linux' },
+      { Icon: MongoIcon, alt: "MongoDB" },
+      { Icon: PostgresIcon, alt: "PostgreSQL" },
+      { Icon: MysqlIcon, alt: "MySQL" },
+      { Icon: DockerIcon, alt: "Docker" },
+      { Icon: GitIcon, alt: "Git" },
+      { Icon: LinuxIcon, alt: "Linux" },
     ],
   },
 ];
 ---
 
-<div id="skills" class="flex flex-col justify-center items-center ">
-   <h1 class="text-2xl md:text-3xl font-bold">Stack & Skills</h1>
-   {categories.map(({title, items})=>(
-      <h2 class="text-xl md:text-2xl font-semibold m-3">{title}</h2>
-      <div class="flex flex-row flex-wrap mx-5 gap-4 justify-center">
-         {items.map(({Icon, alt}, idx)=>{
-            const idIcon = `${idx}-${alt}`
-            return(
-               <Icon class="size-10 md:size-12 hover:scale-115 transition duration-300 " data-tooltip-target={idIcon} data-tooltip-style="light" type="svg"/>
-               <div id={idIcon} role="tooltip" class="text-sm font-medium text-white absolute z-10 invisible inline-block px-3 py-2 transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
-                  {alt}
-                  <div class="tooltip-arrow" data-popper-arrow></div>
-               </div>
-            )
-         })}
-      </div>     
-      ))
-   } 
-</div>
+<section id="skills" class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h2
+      class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10 sm:mb-12 lg:mb-16 text-gray-900 dark:text-white"
+    >
+      Tech Stack & Skills
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      {
+        categories.map(({ title, items }) => (
+          <div class="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-2xl hover:border-indigo-300 dark:hover:border-indigo-600 transition-all duration-300 hover:-translate-y-1">
+            <h3 class="text-lg sm:text-xl font-bold mb-5 sm:mb-6 text-center text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+              {title}
+            </h3>
+            <div class="flex flex-wrap gap-4 sm:gap-5 justify-center">
+              {items.map(({ Icon, alt }) => {
+                return (
+                  <div class="relative group/icon">
+                    <Icon class="size-12 sm:size-14 lg:size-16 text-gray-700 dark:text-gray-300 group-hover/icon:scale-125 group-hover/icon:text-indigo-600 dark:group-hover/icon:text-indigo-400 transition-all duration-300" />
+                    <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-900 dark:bg-gray-700 text-white text-xs font-medium rounded-lg py-1.5 px-3 opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg">
+                      {alt}
+                      <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-gray-900 dark:border-t-gray-700" />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
