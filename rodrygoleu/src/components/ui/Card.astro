@@ -1,5 +1,5 @@
 ---
-const { label, text, ghlink, image, badges, reverse = false } = Astro.props;
+const { label, text, ghlink, image, badges } = Astro.props;
 import githublogo from "../../assets/github.svg";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
@@ -9,46 +9,41 @@ import type { ImageMetadata } from "astro";
    href={ghlink}
    target="_blank"
    rel="noopener noreferrer"
-   class="block w-full group"
+   class="block w-full h-full group"
 >
    <div
-      class:list={[
-         "bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:-translate-y-1.5 border border-gray-200/80 dark:border-gray-700/60",
-         reverse ? "lg:flex-row-reverse" : "lg:flex-row",
-      ]}
+      class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden flex flex-col h-full transition-all duration-300 ease-in-out group-hover:shadow-2xl group-hover:-translate-y-1.5 border border-gray-200/80 dark:border-gray-700/60"
    >
-      <div class="w-full lg:w-2/5 h-56 sm:h-64 lg:h-auto relative">
+      <div class="w-full h-48 sm:h-56 relative">
          <Image
             src={image}
             alt={label}
             class="object-cover w-full h-full"
-            widths={[400, 800, 1200]}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
+            widths={[400, 800]}
+            sizes="(max-width: 640px) 100vw, 400px"
          />
       </div>
-      <div
-         class="p-6 sm:p-8 lg:p-10 w-full lg:w-3/5 flex flex-col justify-center"
-      >
+      <div class="p-6 sm:p-8 flex flex-col justify-between flex-grow">
          <div>
             <h3
-               class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 leading-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+               class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 leading-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
             >
                {label}
             </h3>
             <p
-               class="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 mb-5 sm:mb-6 leading-relaxed"
+               class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-5 sm:mb-6 leading-relaxed"
             >
                {text}
             </p>
          </div>
-         <div class="space-y-5">
+         <div class="space-y-5 mt-auto">
             <div class="flex flex-wrap gap-3">
                {
                   badges.map((badge: ImageMetadata) => (
                      <img
                         src={badge.src}
                         alt="Tech badge"
-                        class="h-7 sm:h-8 lg:h-9 w-auto transition-transform duration-300 group-hover:scale-110"
+                        class="h-7 sm:h-8 w-auto transition-transform duration-300 group-hover:scale-110"
                      />
                   ))
                }
