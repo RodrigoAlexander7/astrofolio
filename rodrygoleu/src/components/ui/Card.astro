@@ -4,10 +4,18 @@ import githublogo from "../../assets/github.svg";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
-// Extract tech names from badge paths for better accessibility
-const getTechName = (badge: ImageMetadata) => {
-   const filename = badge.src.split("/").pop() || "";
-   return filename.replace(/\.(svg|png|jpg)$/, "").replace(/[-_]/g, " ");
+// Type for badge with optional name
+type Badge = ImageMetadata | { src: ImageMetadata; name: string };
+
+// Helper to get badge image and name
+const getBadgeInfo = (badge: Badge) => {
+   if (typeof badge === "object" && "name" in badge) {
+      return { image: badge.src, name: badge.name };
+   }
+   // Fallback: extract name from filename
+   const filename = (badge as ImageMetadata).src.split("/").pop() || "";
+   const name = filename.replace(/\.(svg|png|jpg)$/, "").replace(/[-_]/g, " ");
+   return { image: badge as ImageMetadata, name };
 };
 ---
 
@@ -58,16 +66,20 @@ const getTechName = (badge: ImageMetadata) => {
             aria-label="Technologies used"
          >
             {
-               badges.map((badge: ImageMetadata) => {
-                  const techName = getTechName(badge);
+               badges.map((badge: Badge) => {
+                  const { image, name } = getBadgeInfo(badge);
                   return (
-                     <div role="listitem">
+                     <div role="listitem" class="relative group/tech">
                         <img
-                           src={badge.src}
-                           alt={`${techName} technology`}
-                           title={techName}
-                           class="h-6 sm:h-7 w-auto transition-transform duration-300 group-hover:scale-110"
+                           src={image.src}
+                           alt={`${name} technology`}
+                           title={name}
+                           class="h-6 sm:h-7 w-auto transition-all duration-300 group-hover/tech:scale-125 group-hover/tech:brightness-110"
                         />
+                        <div class="absolute -top-9 left-1/2 -translate-x-1/2 bg-gray-900 dark:bg-gray-700 text-white text-xs font-medium rounded-lg py-1.5 px-2.5 opacity-0 group-hover/tech:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg z-10">
+                           {name}
+                           <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-gray-900 dark:border-t-gray-700" />
+                        </div>
                      </div>
                   );
                })

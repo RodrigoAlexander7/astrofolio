@@ -55,7 +55,13 @@ import fastapi from "../assets/IconSvg/fastapi.svg";
             ghlink="https://github.com/RodrigoAlexander7/Google-Built-in-AI-Challenge-2025"
             demoLink="https://google-built-in-ai-challenge-2025.vercel.app/"
             image={projectImgAI}
-            badges={[ts, nextjs, react, python, fastapi]}
+            badges={[
+               { src: ts, name: "TypeScript" },
+               { src: nextjs, name: "Next.js" },
+               { src: react, name: "React" },
+               { src: python, name: "Python" },
+               { src: fastapi, name: "FastAPI" },
+            ]}
          />
 
          <Card
@@ -64,7 +70,11 @@ import fastapi from "../assets/IconSvg/fastapi.svg";
             ghlink="https://github.com/RodrigoAlexander7/nasa-space-apps-challenge-2025"
             demoLink="https://celestia-graph.vercel.app/"
             image={projectImgClustering}
-            badges={[python, fastapi, jupyter]}
+            badges={[
+               { src: python, name: "Python" },
+               { src: fastapi, name: "FastAPI" },
+               { src: jupyter, name: "Jupyter" },
+            ]}
          />
 
          <Card
@@ -72,7 +82,14 @@ import fastapi from "../assets/IconSvg/fastapi.svg";
             text="A full-stack web application designed to manage clinical records for a university healthcare system. This project streamlines the administration of patient data, vital signs, and medical histories, offering a modern and responsive interface for healthcare professionals."
             ghlink="https://github.com/RodrigoAlexander7/Sistema_Integrado_de_Salud_UNSA"
             image={projectImgMed}
-            badges={[ts, postgres, prisma, shadcn, node, react]}
+            badges={[
+               { src: ts, name: "TypeScript" },
+               { src: postgres, name: "PostgreSQL" },
+               { src: prisma, name: "Prisma" },
+               { src: shadcn, name: "shadcn/ui" },
+               { src: node, name: "Node.js" },
+               { src: react, name: "React" },
+            ]}
          />
 
          <Card
@@ -80,7 +97,11 @@ import fastapi from "../assets/IconSvg/fastapi.svg";
             text="DosisFe is a mobile application developed with React Native and Expo (EAS) that seeks to improve the diagnosis and monitoring of anemia by adjusting hemoglobin for height."
             ghlink="https://github.com/RodrigoAlexander7/H-Calculator"
             image={projectImgDF}
-            badges={[ts, react, expo]}
+            badges={[
+               { src: ts, name: "TypeScript" },
+               { src: react, name: "React Native" },
+               { src: expo, name: "Expo" },
+            ]}
          />
 
          <Card
@@ -88,7 +109,11 @@ import fastapi from "../assets/IconSvg/fastapi.svg";
             text="Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms."
             ghlink="https://github.com/RodrigoAlexander7/Automated_File_Manager"
             image={projectImgWFM}
-            badges={[python, qt, scikitLearn]}
+            badges={[
+               { src: python, name: "Python" },
+               { src: qt, name: "Qt" },
+               { src: scikitLearn, name: "Scikit-Learn" },
+            ]}
          />
       </div>
    </div>
