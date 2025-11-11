@@ -6,10 +6,15 @@ import PillIcons from "../components/icons/PillIcons.astro";
 import leetcodelogo from "../assets/leetcode.svg";
 ---
 
-<section id="about" class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
+<section
+   id="about"
+   class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+   aria-labelledby="about-heading"
+>
    <div class="max-w-5xl mx-auto text-center">
       <h1
-         class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight mb-6 sm:mb-8"
+         id="about-heading"
+         class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-4 sm:mb-6"
       >
          Hi! I'm <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400"
@@ -17,7 +22,7 @@ import leetcodelogo from "../assets/leetcode.svg";
          >
       </h1>
       <p
-         class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10 sm:mb-12"
+         class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-6 sm:mb-8"
       >
          A passionate <strong
             class="text-gray-900 dark:text-white font-semibold"
@@ -29,11 +34,15 @@ import leetcodelogo from "../assets/leetcode.svg";
             >Machine Learning</strong
          >.
       </p>
-      <nav class="flex justify-center gap-3 sm:gap-4 flex-wrap">
+      <nav
+         class="flex justify-center gap-3 sm:gap-4 flex-wrap"
+         aria-label="Social media links"
+      >
          <PillIcons href="https://github.com/RodrigoAlexander7" target="_blank">
             <img
                src={githublogo.src}
-               alt="GitHub"
+               alt=""
+               aria-hidden="true"
                class="w-5 h-5 dark:invert"
             />
             GitHub
@@ -44,7 +53,8 @@ import leetcodelogo from "../assets/leetcode.svg";
          >
             <img
                src={linkedinlogo.src}
-               alt="LinkedIn"
+               alt=""
+               aria-hidden="true"
                class="w-5 h-5 dark:invert"
             />
             LinkedIn
@@ -53,7 +63,12 @@ import leetcodelogo from "../assets/leetcode.svg";
             href="https://leetcode.com/u/rofernandezlr/"
             target="_blank"
          >
-            <img src={leetcodelogo.src} alt="LeetCode" class="w-5 h-5" />
+            <img
+               src={leetcodelogo.src}
+               alt=""
+               aria-hidden="true"
+               class="w-5 h-5"
+            />
             LeetCode
          </PillIcons>
       </nav>

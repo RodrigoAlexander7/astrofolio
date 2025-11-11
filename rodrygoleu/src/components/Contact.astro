@@ -4,9 +4,14 @@ import linkedinBadge from "../assets/IconBadges/linkedin-badge.svg";
 import githubBadge from "../assets/IconBadges/github-badge.svg";
 ---
 
-<section id="contact" class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
+<section
+   id="contact"
+   class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
+   aria-labelledby="contact-heading"
+>
    <div class="max-w-4xl mx-auto text-center">
       <h2
+         id="contact-heading"
          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6"
       >
          Let's Connect!
@@ -21,34 +26,40 @@ import githubBadge from "../assets/IconBadges/github-badge.svg";
          <a
             href="mailto:rodrygoleu7@gmail.com"
             target="_blank"
-            class="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+            rel="noopener noreferrer"
+            class="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 rounded-lg"
+            aria-label="Send email to rodrygoleu7@gmail.com"
          >
             <img
                class="h-10 sm:h-10 lg:h-8 w-auto"
                src={gmailBadge.src}
-               alt="Email me"
+               alt="Gmail"
             />
          </a>
          <a
             href="https://www.linkedin.com/in/rodrigo-fernandez-h/"
             target="_blank"
-            class="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+            rel="noopener noreferrer"
+            class="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 rounded-lg"
+            aria-label="Connect with me on LinkedIn"
          >
             <img
                class="h-10 sm:h-10 lg:h-8 w-auto"
                src={linkedinBadge.src}
-               alt="Connect on LinkedIn"
+               alt="LinkedIn"
             />
          </a>
          <a
             href="https://github.com/RodrigoAlexander7"
             target="_blank"
-            class="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+            rel="noopener noreferrer"
+            class="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 rounded-lg"
+            aria-label="Follow me on GitHub"
          >
             <img
                class="h-10 sm:h-10 lg:h-8 w-auto"
                src={githubBadge.src}
-               alt="Follow on GitHub"
+               alt="GitHub"
             />
          </a>
       </div>
