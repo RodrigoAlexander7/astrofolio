@@ -5,9 +5,11 @@ import projectImgWFM from "../assets/projectsImgs/projectFileManager.png";
 import projectImgDF from "../assets/projectsImgs/projectDosisFe.png";
 import projectImgMed from "../assets/projectsImgs/projectMedico.png";
 import projectImgAI from "../assets/projectsImgs/projectAILearning.png";
+import projectImgClustering from "../assets/projectsImgs/projectImgClustering.png";
 
 import ts from "../assets/IconSvg/ts.svg";
 import python from "../assets/IconBadges/python.svg";
+import jupyter from "../assets/IconBadges/jupyter.svg";
 import postgres from "../assets/IconBadges/postgres.svg";
 import node from "../assets/IconBadges/node.svg";
 import prisma from "../assets/IconBadges/prisma.svg";
@@ -48,28 +50,21 @@ import fastapi from "../assets/IconSvg/fastapi.svg";
          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
       >
          <Card
-            label="Automated File Manager (AI Powered)"
-            text="Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms."
-            ghlink="https://github.com/RodrigoAlexander7/Automated_File_Manager"
-            image={projectImgWFM}
-            badges={[python, qt, scikitLearn]}
-         />
-
-         <Card
-            label="Automated File Manager (AI Powered)"
-            text="Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms."
-            ghlink="https://github.com/RodrigoAlexander7/Automated_File_Manager"
-            image={projectImgWFM}
-            badges={[python, qt, scikitLearn]}
-         />
-
-         <Card
             label="AI-Powered Learning Assistant"
             text="Intelligent educational platform powered by Google's Gemini AI with local Gemini Nano processing. Features PDF summarization, exercise generation, flashcards, learning roadmaps, and educational games."
             ghlink="https://github.com/RodrigoAlexander7/Google-Built-in-AI-Challenge-2025"
             demoLink="https://google-built-in-ai-challenge-2025.vercel.app/"
             image={projectImgAI}
             badges={[ts, nextjs, react, python, fastapi]}
+         />
+
+         <Card
+            label="Scientific Article Clustering Platform"
+            text="End-to-end ML pipeline for clustering and semantic search of scientific literature using SciBERT, HDBSCAN, and Whoosh. Features contextual embeddings, automatic labeling, semantic search, and FastAPI backend."
+            ghlink="https://github.com/RodrigoAlexander7/nasa-space-apps-challenge-2025"
+            demoLink="https://celestia-graph.vercel.app/"
+            image={projectImgClustering}
+            badges={[python, fastapi, jupyter]}
          />
 
          <Card
@@ -86,6 +81,14 @@ import fastapi from "../assets/IconSvg/fastapi.svg";
             ghlink="https://github.com/RodrigoAlexander7/H-Calculator"
             image={projectImgDF}
             badges={[ts, react, expo]}
+         />
+
+         <Card
+            label="Automated File Manager (AI Powered)"
+            text="Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms."
+            ghlink="https://github.com/RodrigoAlexander7/Automated_File_Manager"
+            image={projectImgWFM}
+            badges={[python, qt, scikitLearn]}
          />
       </div>
    </div>
