@@ -24,82 +24,120 @@ import DockerIcon from "../assets/IconSvg/docker.svg";
 import GitIcon from "../assets/IconSvg/git.svg";
 import LinuxIcon from "../assets/IconSvg/linux.svg";
 
-// Todas las tecnologías en un solo array para el carrusel
-const allTechs = [
-  { Icon: TsIcon, alt: "TypeScript" },
-  { Icon: PythonIcon, alt: "Python" },
-  { Icon: JavaIcon, alt: "Java" },
-  { Icon: CppIcon, alt: "C++" },
-  { Icon: ReactIcon, alt: "React" },
-  { Icon: NextjsIcon, alt: "Next.js" },
-  { Icon: AstroIcon, alt: "Astro" },
-  { Icon: AngularIcon, alt: "Angular" },
-  { Icon: FlutterIcon, alt: "Flutter" },
-  { Icon: ExpoIcon, alt: "Expo" },
-  { Icon: NodejsIcon, alt: "Node.js" },
-  { Icon: ExpressIcon, alt: "Express" },
-  { Icon: NestjsIcon, alt: "NestJS" },
-  { Icon: SpringIcon, alt: "Spring" },
-  { Icon: FastapiIcon, alt: "FastAPI" },
-  { Icon: PostgresIcon, alt: "PostgreSQL" },
-  { Icon: MongoIcon, alt: "MongoDB" },
-  { Icon: MysqlIcon, alt: "MySQL" },
-  { Icon: DockerIcon, alt: "Docker" },
-  { Icon: GitIcon, alt: "Git" },
-  { Icon: LinuxIcon, alt: "Linux" },
+// Tecnologías categorizadas por slides
+const techSlides = [
+  {
+    title: "Frontend",
+    color: "text-blue-600 dark:text-blue-400",
+    techs: [
+      { Icon: TsIcon, alt: "TypeScript" },
+      { Icon: ReactIcon, alt: "React" },
+      { Icon: NextjsIcon, alt: "Next.js" },
+      { Icon: AstroIcon, alt: "Astro" },
+      { Icon: AngularIcon, alt: "Angular" },
+      { Icon: FlutterIcon, alt: "Flutter" },
+      { Icon: ExpoIcon, alt: "Expo" },
+    ],
+  },
+  {
+    title: "Backend",
+    color: "text-green-600 dark:text-green-400",
+    techs: [
+      { Icon: NodejsIcon, alt: "Node.js" },
+      { Icon: ExpressIcon, alt: "Express" },
+      { Icon: NestjsIcon, alt: "NestJS" },
+      { Icon: PythonIcon, alt: "Python" },
+      { Icon: FastapiIcon, alt: "FastAPI" },
+      { Icon: JavaIcon, alt: "Java" },
+      { Icon: SpringIcon, alt: "Spring" },
+      { Icon: CppIcon, alt: "C++" },
+      { Icon: PostgresIcon, alt: "PostgreSQL" },
+      { Icon: MongoIcon, alt: "MongoDB" },
+      { Icon: MysqlIcon, alt: "MySQL" },
+    ],
+  },
+  {
+    title: "DevOps & Tools",
+    color: "text-purple-600 dark:text-purple-400",
+    techs: [
+      { Icon: DockerIcon, alt: "Docker" },
+      { Icon: GitIcon, alt: "Git" },
+      { Icon: LinuxIcon, alt: "Linux" },
+    ],
+  },
 ];
 ---
 
 <section
   id="skills"
-  class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+  class="py-12 sm:py-16 lg:py-20 overflow-hidden"
   aria-labelledby="skills-heading"
 >
   <div class="max-w-7xl mx-auto">
-    <h2
-      id="skills-heading"
-      class="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-10 lg:mb-12 text-gray-900 dark:text-white animate-fade-in"
+    <!-- Título dinámico con transición -->
+    <div
+      class="text-center mb-8 sm:mb-10 lg:mb-12 min-h-[3rem] sm:min-h-[4rem]"
     >
-      Tech Stack & Skills
-    </h2>
+      <h2
+        id="skills-heading"
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white"
+      >
+        Tech Stack: <span
+          id="slide-title"
+          class="transition-colors duration-500">Frontend</span
+        >
+      </h2>
+    </div>
 
-    <!-- Carrusel de tecnologías -->
-    <div class="relative">
-      <!-- Gradiente izquierdo -->
+    <!-- Contenedor del carrusel con slides -->
+    <div class="relative -mx-4 sm:-mx-6 lg:-mx-8">
+      <!-- Gradientes en los extremos -->
       <div
-        class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white dark:from-gray-950 to-transparent z-10 pointer-events-none"
+        class="absolute left-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-r from-white dark:from-gray-950 to-transparent z-10 pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute right-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-l from-white dark:from-gray-950 to-transparent z-10 pointer-events-none"
       >
       </div>
 
-      <!-- Gradiente derecho -->
-      <div
-        class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white dark:from-gray-950 to-transparent z-10 pointer-events-none"
-      >
+      <!-- Wrapper del carrusel -->
+      <div class="carousel-wrapper overflow-hidden">
+        <div id="tech-carousel" class="carousel-track flex">
+          <!-- Duplicar slides para loop infinito sin corte -->
+          {
+            [...techSlides, ...techSlides, ...techSlides].map(
+              (slide, slideIndex) => (
+                <div
+                  class="carousel-slide flex-shrink-0 w-full flex items-center justify-center gap-6 sm:gap-8 lg:gap-12 px-8 sm:px-12 lg:px-16 py-8"
+                  data-slide-title={slide.title}
+                  data-slide-color={slide.color}
+                >
+                  {slide.techs.map(({ Icon, alt }) => (
+                    <div class="tech-icon-wrapper relative group/icon flex-shrink-0">
+                      <Icon class="size-10 sm:size-12 lg:size-14 text-gray-700 dark:text-gray-300 group-hover/icon:scale-110 transition-all duration-300 filter drop-shadow-md" />
+                      <div class="absolute -top-10 sm:-top-12 left-1/2 -translate-x-1/2 bg-gray-900 dark:bg-gray-700 text-white text-xs font-medium rounded-lg py-1.5 px-2.5 opacity-0 group-hover/icon:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none shadow-lg z-20">
+                        {alt}
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-gray-900 dark:border-t-gray-700" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )
+            )
+          }
+        </div>
       </div>
 
-      <!-- Carrusel -->
-      <div class="tech-carousel flex gap-8 items-center py-8">
+      <!-- Indicadores de slides -->
+      <div class="flex justify-center gap-2 mt-8">
         {
-          allTechs.map(({ Icon, alt }) => (
-            <div class="tech-item flex-shrink-0 relative group/icon">
-              <Icon class="size-12 sm:size-14 lg:size-16 text-gray-700 dark:text-gray-300 group-hover/icon:scale-125 group-hover/icon:text-indigo-600 dark:group-hover/icon:text-indigo-400 transition-all duration-300 filter drop-shadow-md" />
-              <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 dark:bg-gray-700 text-white text-xs font-medium rounded-lg py-2 px-3 opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg z-20">
-                {alt}
-                <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-gray-900 dark:border-t-gray-700" />
-              </div>
-            </div>
-          ))
-        }
-        {/* Duplicar para loop infinito */}
-        {
-          allTechs.map(({ Icon, alt }) => (
-            <div class="tech-item flex-shrink-0 relative group/icon">
-              <Icon class="size-12 sm:size-14 lg:size-16 text-gray-700 dark:text-gray-300 group-hover/icon:scale-125 group-hover/icon:text-indigo-600 dark:group-hover/icon:text-indigo-400 transition-all duration-300 filter drop-shadow-md" />
-              <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 dark:bg-gray-700 text-white text-xs font-medium rounded-lg py-2 px-3 opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg z-20">
-                {alt}
-                <div class="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-gray-900 dark:border-t-gray-700" />
-              </div>
-            </div>
+          techSlides.map((_, index) => (
+            <button
+              class="slide-indicator w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-700 transition-all duration-300"
+              data-slide-index={index}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))
         }
       </div>
@@ -108,35 +146,145 @@ const allTechs = [
 </section>
 
 <style>
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+  .carousel-track {
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .tech-carousel {
-    animation: scroll 40s linear infinite;
+  .slide-indicator {
+    transition: all 0.3s ease;
+    width: 0.5rem; /* matches tailwind w-2 */
+    height: 0.5rem; /* matches tailwind h-2 */
+    border-radius: 9999px;
   }
 
-  .tech-carousel:hover {
-    animation-play-state: paused;
+  .slide-indicator.active {
+    background-color: #4f46e5; /* indigo-600 */
+    width: 2rem; /* visually expand when active */
+    height: 0.5rem;
   }
 
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .dark .slide-indicator.active {
+    background-color: #818cf8; /* approximate indigo-400 for dark mode */
   }
 
-  .animate-fade-in {
-    animation: fade-in 0.8s ease-out;
+  .slide-indicator:focus {
+    outline: 3px solid rgba(79, 70, 229, 0.18);
+    outline-offset: 3px;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.getElementById("tech-carousel");
+    const slideTitle = document.getElementById("slide-title");
+    const indicators = document.querySelectorAll(".slide-indicator");
+    const slides = document.querySelectorAll(".carousel-slide");
+
+    if (!carousel || !slideTitle || slides.length === 0) return;
+
+    const totalOriginalSlides = 3; // Frontend, Backend, DevOps
+    let currentSlide = 0;
+    let isTransitioning = false;
+
+    // Velocidad adaptativa según dispositivo
+    const getInterval = () => {
+      return window.innerWidth < 768 ? 3000 : 4500; // Más rápido en móviles
+    };
+
+    let autoplayInterval = getInterval();
+
+    const updateSlide = (index: number, smooth: boolean = true) => {
+      if (isTransitioning) return;
+
+      isTransitioning = true;
+      const slideWidth = carousel.parentElement!.offsetWidth;
+
+      if (!smooth) {
+        carousel.style.transition = "none";
+      }
+
+      carousel.style.transform = `translateX(-${index * slideWidth}px)`;
+
+      // Actualizar título con fade
+      const currentSlideEl = slides[index] as HTMLElement;
+      const newTitle = currentSlideEl.dataset.slideTitle || "Frontend";
+      const newColor =
+        currentSlideEl.dataset.slideColor || "text-blue-600 dark:text-blue-400";
+
+      slideTitle.style.opacity = "0";
+
+      setTimeout(() => {
+        slideTitle.textContent = newTitle;
+        slideTitle.className = `transition-all duration-500 ${newColor}`;
+        slideTitle.style.opacity = "1";
+      }, 250);
+
+      // Actualizar indicadores
+      const normalizedIndex = index % totalOriginalSlides;
+      indicators.forEach((indicator, i) => {
+        indicator.classList.toggle("active", i === normalizedIndex);
+      });
+
+      setTimeout(() => {
+        if (!smooth) {
+          carousel.style.transition = "";
+        }
+        isTransitioning = false;
+      }, 800);
+    };
+
+    const nextSlide = () => {
+      currentSlide++;
+
+      // Si llegamos al final de la primera copia, hacer reset invisible
+      if (currentSlide >= totalOriginalSlides * 2) {
+        updateSlide(currentSlide, true);
+
+        setTimeout(() => {
+          currentSlide = totalOriginalSlides;
+          updateSlide(currentSlide, false);
+        }, 800);
+      } else {
+        updateSlide(currentSlide, true);
+      }
+    };
+
+    // Autoplay
+    let autoplay = setInterval(nextSlide, autoplayInterval);
+
+    // Pausar al hacer hover
+    carousel.addEventListener("mouseenter", () => {
+      clearInterval(autoplay);
+    });
+
+    carousel.addEventListener("mouseleave", () => {
+      autoplay = setInterval(nextSlide, autoplayInterval);
+    });
+
+    // Indicadores clickeables
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        clearInterval(autoplay);
+        currentSlide = index + totalOriginalSlides; // Usar el slide del medio
+        updateSlide(currentSlide, true);
+        autoplay = setInterval(nextSlide, autoplayInterval);
+      });
+    });
+
+    // Ajustar velocidad al cambiar tamaño de ventana
+    let resizeTimer: number;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        clearInterval(autoplay);
+        autoplayInterval = getInterval();
+        updateSlide(currentSlide, false);
+        autoplay = setInterval(nextSlide, autoplayInterval);
+      }, 250);
+    });
+
+    // Inicializar en el slide del medio para permitir loop infinito
+    currentSlide = totalOriginalSlides;
+    updateSlide(currentSlide, false);
+  });
+</script>

@@ -10,105 +10,105 @@ import BackToTop from "../components/BackToTop.astro";
 
 const pageTitle = "Rodrigo Alexander Fernandez Huarca | Full-Stack Developer";
 const pageDescription =
-	"Portfolio of Rodrigo Alexander Fernandez Huarca, a passionate Full-Stack Developer creating unique web and mobile experiences with an interest in Data Science and Machine Learning.";
+  "Portfolio of Rodrigo Alexander Fernandez Huarca, a passionate Full-Stack Developer creating unique web and mobile experiences with an interest in Data Science and Machine Learning.";
 const pageUrl = Astro.url.origin;
 const ogImageUrl = `${pageUrl}/og-image.png`;
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
-		<!-- Primary Meta Tags -->
-		<title>{pageTitle}</title>
-		<meta name="title" content={pageTitle} />
-		<meta name="description" content={pageDescription} />
-		<meta name="author" content="Rodrigo Alexander Fernandez Huarca" />
-		<meta
-			name="keywords"
-			content="Rodrigo Alexander Fernandez Huarca, Rodrigo Fernandez, RodrygoLeu, Full-Stack Developer, Portfolio, Web Developer, Data Science"
-		/>
+    <!-- Primary Meta Tags -->
+    <title>{pageTitle}</title>
+    <meta name="title" content={pageTitle} />
+    <meta name="description" content={pageDescription} />
+    <meta name="author" content="Rodrigo Alexander Fernandez Huarca" />
+    <meta
+      name="keywords"
+      content="Rodrigo Alexander Fernandez Huarca, Rodrigo Fernandez, RodrygoLeu, Full-Stack Developer, Portfolio, Web Developer, Data Science"
+    />
 
-		<!-- Google Site Verification -->
-		<meta
-			name="google-site-verification"
-			content="M7o3adCC4_6Ih8cwTpICwRg-gFFXH-skzUyYcbKULxs"
-		/>
+    <!-- Google Site Verification -->
+    <meta
+      name="google-site-verification"
+      content="M7o3adCC4_6Ih8cwTpICwRg-gFFXH-skzUyYcbKULxs"
+    />
 
-		<!-- Favicon -->
-		<link rel="icon" type="image/png" href="/logo.png" />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<meta name="generator" content={Astro.generator} />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={pageUrl} />
-		<meta property="og:title" content={pageTitle} />
-		<meta property="og:description" content={pageDescription} />
-		<meta property="og:image" content={ogImageUrl} />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={ogImageUrl} />
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={pageUrl} />
-		<meta property="twitter:title" content={pageTitle} />
-		<meta property="twitter:description" content={pageDescription} />
-		<meta property="twitter:image" content={ogImageUrl} />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={pageUrl} />
+    <meta property="twitter:title" content={pageTitle} />
+    <meta property="twitter:description" content={pageDescription} />
+    <meta property="twitter:image" content={ogImageUrl} />
 
-		<!-- Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-			rel="stylesheet"
-		/>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-		<script is:inline>
-			// Prevents FOUC (Flash of Unstyled Content)
-			const theme = (() => {
-				if (
-					typeof localStorage !== "undefined" &&
-					localStorage.getItem("theme")
-				) {
-					return localStorage.getItem("theme");
-				}
-				if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-					return "dark";
-				}
-				return "light";
-			})();
+    <script is:inline>
+      // Prevents FOUC (Flash of Unstyled Content)
+      const theme = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
 
-			if (theme === "light") {
-				document.documentElement.classList.remove("dark");
-			} else {
-				document.documentElement.classList.add("dark");
-			}
-			window.localStorage.setItem("theme", theme);
-		</script>
-	</head>
+      if (theme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+      window.localStorage.setItem("theme", theme);
+    </script>
+  </head>
 
-	<body
-		class="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-300 transition-colors duration-300 font-sans"
-	>
-		<div
-			class="absolute top-0 z-[-2] h-screen w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-gray-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))]"
-		>
-		</div>
-		<Header />
-		<main id="main-content">
-			<About />
-			<Skills />
-			<Projects />
-			<Contact />
-		</main>
-		<Footer />
-		<BackToTop />
+  <body
+    class="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-300 transition-colors duration-300 font-sans"
+  >
+    <div
+      class="absolute top-0 z-[-2] h-screen w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-gray-950 dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))]"
+    >
+    </div>
+    <Header />
+    <main id="main-content">
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+    </main>
+    <Footer />
+    <BackToTop />
 
-		<slot />
-		<script
-			is:inline
-			src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"
-		></script>
-	</body>
+    <slot />
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"
+    ></script>
+  </body>
 </html>
