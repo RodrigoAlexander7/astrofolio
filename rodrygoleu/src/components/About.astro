@@ -7,70 +7,61 @@ import leetcodelogo from "../assets/leetcode.svg";
 ---
 
 <section
-   id="about"
-   class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
-   aria-labelledby="about-heading"
+  id="about"
+  class="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+  aria-labelledby="about-heading"
 >
-   <div class="max-w-5xl mx-auto text-center">
-      <h1
-         id="about-heading"
-         class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-5 sm:mb-6"
+  <div class="max-w-5xl mx-auto text-center">
+    <h1
+      id="about-heading"
+      class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-5 sm:mb-6 animate-fade-in-up"
+    >
+      Hi! I'm <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 animate-float"
+        >Rodrigo Fernandez</span
       >
-         Hi! I'm <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400"
-            >Rodrigo Fernandez</span
-         >
-      </h1>
-      <p
-         class="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10"
+    </h1>
+    <p
+      class="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8 sm:mb-10 animate-fade-in-up animation-delay-200"
+    >
+      A passionate <strong class="text-gray-900 dark:text-white font-semibold"
+        >Full-Stack Developer</strong
+      > creating unique web and mobile experiences, with a growing interest in
+      <strong class="text-gray-900 dark:text-white font-semibold"
+        >Data Science</strong
+      > and <strong class="text-gray-900 dark:text-white font-semibold"
+        >Machine Learning</strong
+      >.
+    </p>
+    <nav
+      class="flex justify-center gap-3 sm:gap-4 flex-wrap animate-fade-in-up animation-delay-400"
+      aria-label="Social media links"
+    >
+      <PillIcons href="https://github.com/RodrigoAlexander7" target="_blank">
+        <img
+          src={githublogo.src}
+          alt=""
+          aria-hidden="true"
+          class="w-5 h-5 dark:invert"
+        />
+        GitHub
+      </PillIcons>
+      <PillIcons
+        href="https://www.linkedin.com/in/rodrigo-fernandez-h/"
+        target="_blank"
       >
-         A passionate <strong
-            class="text-gray-900 dark:text-white font-semibold"
-            >Full-Stack Developer</strong
-         > creating unique web and mobile experiences, with a growing interest in
-         <strong class="text-gray-900 dark:text-white font-semibold"
-            >Data Science</strong
-         > and <strong class="text-gray-900 dark:text-white font-semibold"
-            >Machine Learning</strong
-         >.
-      </p>
-      <nav
-         class="flex justify-center gap-3 sm:gap-4 flex-wrap"
-         aria-label="Social media links"
-      >
-         <PillIcons href="https://github.com/RodrigoAlexander7" target="_blank">
-            <img
-               src={githublogo.src}
-               alt=""
-               aria-hidden="true"
-               class="w-5 h-5 dark:invert"
-            />
-            GitHub
-         </PillIcons>
-         <PillIcons
-            href="https://www.linkedin.com/in/rodrigo-fernandez-h/"
-            target="_blank"
-         >
-            <img
-               src={linkedinlogo.src}
-               alt=""
-               aria-hidden="true"
-               class="w-5 h-5 dark:invert"
-            />
-            LinkedIn
-         </PillIcons>
-         <PillIcons
-            href="https://leetcode.com/u/rofernandezlr/"
-            target="_blank"
-         >
-            <img
-               src={leetcodelogo.src}
-               alt=""
-               aria-hidden="true"
-               class="w-5 h-5"
-            />
-            LeetCode
-         </PillIcons>
-      </nav>
-   </div>
+        <img
+          src={linkedinlogo.src}
+          alt=""
+          aria-hidden="true"
+          class="w-5 h-5 dark:invert"
+        />
+        LinkedIn
+      </PillIcons>
+      <PillIcons href="https://leetcode.com/u/rofernandezlr/" target="_blank">
+        <img src={leetcodelogo.src} alt="" aria-hidden="true" class="w-5 h-5" />
+        LeetCode
+      </PillIcons>
+    </nav>
+  </div>
 </section>

@@ -28,104 +28,112 @@ import docker from "../assets/IconSvg/docker.svg";
 ---
 
 <section
-   id="projects"
-   class="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
-   aria-labelledby="projects-heading"
+  id="projects"
+  class="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+  aria-labelledby="projects-heading"
 >
-   <div
-      class="absolute inset-0 -z-10 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950"
-   >
-   </div>
-   <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12 sm:mb-16 lg:mb-20">
-         <h2
-            id="projects-heading"
-            class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white"
-         >
-            Featured Projects
-         </h2>
-         <p
-            class="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
-         >
-            A selection of projects that showcase my skills and passion.
-         </p>
-      </div>
-
-      <div
-         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-950 dark:via-gray-900 dark:to-gray-950"
+  >
+  </div>
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12 sm:mb-16 lg:mb-20">
+      <h2
+        id="projects-heading"
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white animate-fade-in-up"
       >
-         <Card
-            label="AI-Powered Learning Assistant"
-            text="Intelligent educational platform powered by Google's Gemini AI with local Gemini Nano processing. Features PDF summarization, exercise generation, flashcards, learning roadmaps, and educational games."
-            ghlink="https://github.com/RodrigoAlexander7/Google-Built-in-AI-Challenge-2025"
-            demoLink="https://google-built-in-ai-challenge-2025.vercel.app/"
-            image={projectImgAI}
-            badges={[
-               { src: ts, name: "TypeScript" },
-               { src: nextjs, name: "Next.js" },
-               { src: react, name: "React" },
-               { src: python, name: "Python" },
-               { src: fastapi, name: "FastAPI" },
-               { src: langchain, name: "LangChain" },
-            ]}
-         />
+        Featured Projects
+      </h2>
+      <p
+        class="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-200"
+      >
+        A selection of projects that showcase my skills and passion.
+      </p>
+    </div>
 
-         <Card
-            label="Scientific Article Clustering Platform"
-            text="End-to-end ML pipeline for clustering and semantic search of scientific literature using SciBERT, HDBSCAN, and Whoosh. Features contextual embeddings, automatic labeling, semantic search, and FastAPI backend."
-            ghlink="https://github.com/RodrigoAlexander7/nasa-space-apps-challenge-2025"
-            demoLink="https://celestia-graph.vercel.app/"
-            image={projectImgClustering}
-            badges={[
-               { src: python, name: "Python" },
-               { src: fastapi, name: "FastAPI" },
-               { src: jupyter, name: "Jupyter" },
-               { src: react, name: "React" },
-            ]}
-         />
-
-         <Card
-            label="Mobile App for Anemia Monitoring (WIP)"
-            text="DosisFe is a mobile application developed with React Native and Expo (EAS) that seeks to improve the diagnosis and monitoring of anemia by adjusting hemoglobin for height."
-            ghlink="https://github.com/RodrigoAlexander7/H-Calculator"
-            image={projectImgDF}
-            demoLink="https://github.com/RodrigoAlexander7/dosis-fe/releases/tag/v2.0.0"
-            badges={[
-               { src: nest, name: "NestJS" },
-               { src: ts, name: "TypeScript" },
-               { src: react, name: "React Native" },
-               { src: passport, name: "Passport" },
-               { src: expo, name: "Expo" },
-               { src: docker, name: "Docker" },
-            ]}
-         />
-
-         <Card
-            label="Medical Records Management System"
-            text="A full-stack web application designed to manage clinical records for a university healthcare system. This project streamlines the administration of patient data, vital signs, and medical histories, offering a modern and responsive interface for healthcare professionals."
-            ghlink="https://github.com/RodrigoAlexander7/Sistema_Integrado_de_Salud_UNSA"
-            image={projectImgMed}
-            badges={[
-               { src: ts, name: "TypeScript" },
-               { src: postgres, name: "PostgreSQL" },
-               { src: prisma, name: "Prisma" },
-               { src: shadcn, name: "shadcn/ui" },
-               { src: node, name: "Node.js" },
-               { src: react, name: "React" },
-            ]}
-         />
-
-         <Card
-            label="Automated File Manager (AI Powered)"
-            text="Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms."
-            ghlink="https://github.com/RodrigoAlexander7/Automated_File_Manager"
-            image={projectImgWFM}
-            badges={[
-               { src: python, name: "Python" },
-               { src: qt, name: "Qt" },
-               { src: scikitLearn, name: "Scikit-Learn" },
-            ]}
-         />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div class="animate-scale-in">
+        <Card
+          label="AI-Powered Learning Assistant"
+          text="Intelligent educational platform powered by Google's Gemini AI with local Gemini Nano processing. Features PDF summarization, exercise generation, flashcards, learning roadmaps, and educational games."
+          ghlink="https://github.com/RodrigoAlexander7/Google-Built-in-AI-Challenge-2025"
+          demoLink="https://google-built-in-ai-challenge-2025.vercel.app/"
+          image={projectImgAI}
+          badges={[
+            { src: ts, name: "TypeScript" },
+            { src: nextjs, name: "Next.js" },
+            { src: react, name: "React" },
+            { src: python, name: "Python" },
+            { src: fastapi, name: "FastAPI" },
+            { src: langchain, name: "LangChain" },
+          ]}
+        />
       </div>
-   </div>
+
+      <div class="animate-scale-in animation-delay-100">
+        <Card
+          label="Scientific Article Clustering Platform"
+          text="End-to-end ML pipeline for clustering and semantic search of scientific literature using SciBERT, HDBSCAN, and Whoosh. Features contextual embeddings, automatic labeling, semantic search, and FastAPI backend."
+          ghlink="https://github.com/RodrigoAlexander7/nasa-space-apps-challenge-2025"
+          demoLink="https://celestia-graph.vercel.app/"
+          image={projectImgClustering}
+          badges={[
+            { src: python, name: "Python" },
+            { src: fastapi, name: "FastAPI" },
+            { src: jupyter, name: "Jupyter" },
+            { src: react, name: "React" },
+          ]}
+        />
+      </div>
+
+      <div class="animate-scale-in animation-delay-200">
+        <Card
+          label="Mobile App for Anemia Monitoring (WIP)"
+          text="DosisFe is a mobile application developed with React Native and Expo (EAS) that seeks to improve the diagnosis and monitoring of anemia by adjusting hemoglobin for height."
+          ghlink="https://github.com/RodrigoAlexander7/H-Calculator"
+          image={projectImgDF}
+          demoLink="https://github.com/RodrigoAlexander7/dosis-fe/releases/tag/v2.0.0"
+          badges={[
+            { src: nest, name: "NestJS" },
+            { src: ts, name: "TypeScript" },
+            { src: react, name: "React Native" },
+            { src: passport, name: "Passport" },
+            { src: expo, name: "Expo" },
+            { src: docker, name: "Docker" },
+          ]}
+        />
+      </div>
+
+      <div class="animate-scale-in animation-delay-300">
+        <Card
+          label="Medical Records Management System"
+          text="A full-stack web application designed to manage clinical records for a university healthcare system. This project streamlines the administration of patient data, vital signs, and medical histories, offering a modern and responsive interface for healthcare professionals."
+          ghlink="https://github.com/RodrigoAlexander7/Sistema_Integrado_de_Salud_UNSA"
+          image={projectImgMed}
+          badges={[
+            { src: ts, name: "TypeScript" },
+            { src: postgres, name: "PostgreSQL" },
+            { src: prisma, name: "Prisma" },
+            { src: shadcn, name: "shadcn/ui" },
+            { src: node, name: "Node.js" },
+            { src: react, name: "React" },
+          ]}
+        />
+      </div>
+
+      <div class="animate-scale-in animation-delay-400">
+        <Card
+          label="Automated File Manager (AI Powered)"
+          text="Intelligent system with graphical interface for automatic file organization and clustering of academic documents using TF-IDF and K-means algorithms."
+          ghlink="https://github.com/RodrigoAlexander7/Automated_File_Manager"
+          image={projectImgWFM}
+          badges={[
+            { src: python, name: "Python" },
+            { src: qt, name: "Qt" },
+            { src: scikitLearn, name: "Scikit-Learn" },
+          ]}
+        />
+      </div>
+    </div>
+  </div>
 </section>
